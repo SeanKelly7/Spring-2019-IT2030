@@ -11,7 +11,7 @@ namespace WebApplication1.Controllers
         // GET: /product
         public string Index()
         {
-            return "Product/index is displayed";
+			return "Product/index is displayed";
         }
 
 		//Get: /product/Browse
