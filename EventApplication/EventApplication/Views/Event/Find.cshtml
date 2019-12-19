@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Find";
+}
+<br />
+<div class="events">
+    <h2>Find an Event</h2>
+
+    @using (Ajax.BeginForm("EventSearch", "Event", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET",
+        OnFailure = "searchFailed",
+        UpdateTargetId = "searchresults"
+    }))
+    {
+        <input type="text" name="eSearchString" placeholder="Event or Event Type" />
+        <input type="text" name="lSearchString" placeholder="City or State" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+    }
+    <br />
+    <div id="searchresults"></div>
+
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/App/Scripts.js"></script>
+}

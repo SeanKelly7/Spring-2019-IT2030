@@ -5,7 +5,10 @@ using System.Web;
 
 namespace EventApplication.Models
 {
-	public class AccountViewModel
-	{
-	}
+    public class OrderCartRemoveViewModel
+    {
+        public int DeleteId;
+
+        public string Status;
+    }
 }

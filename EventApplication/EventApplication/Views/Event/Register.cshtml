@@ -1,0 +1,40 @@
+﻿@model EventApplication.Models.Event
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<p>Sale ends on @Html.DisplayFor(model => model.StartDate.Month)/@Html.DisplayFor(model => model.StartDate.Day)/@Html.DisplayFor(model => model.StartDate.Year)</p>
+
+<div id="error-message"></div>
+
+<div class="row register-box">
+    <div class="col-md-6">
+        <strong>@Html.DisplayFor(model => model.Title)</strong>
+    <br />
+    FREE
+</div>
+    <div class="col-md-6">
+        Number of Tickets<br />
+        <select name="Count" id="Count" data-available="@Html.DisplayFor(model => model.TicketsAvailable)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+</div><br />
+
+@Html.ActionLink("Checkout", "AddToCart", "Order", new { @id = Model.EventId }, new { @id = "Checkout" })
+
+@section Scripts{
+    <script src="~/Scripts/App/Scripts.js"></script>
+}

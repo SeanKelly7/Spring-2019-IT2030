@@ -1,0 +1,45 @@
+﻿@model EventApplication.Models.OrderCartViewModel
+
+@{
+    ViewBag.Title = "Ticket Orders";
+}
+
+<h2>Ticket Orders</h2>
+
+<div id="update-message"></div>
+<br />
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Date Ordered</th>
+            <th>Number of Tickets</th>
+            <th>Order Status</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.OrderItems)
+        {
+            <tr id="record-@item.RecordId">
+                <td>@Html.ActionLink(item.EventSelected.Title, "Details", "Order", new { id = item.RecordId }, null)</td>
+                <td>@item.DateCreated</td>
+                <td>@item.Count</td>
+                <td id="item-status-@item.RecordId">@item.Status</td>
+                <td>
+                    @if (item.Status == "Processed")
+                    {
+                        <a href="#" data-id="@item.RecordId" data-title="@item.EventSelected.Title" id="item-cancel-@item.RecordId" class="cancelOrder">Cancel Order</a>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <p class="button">
+        @Html.ActionLink("Back to Browse", "Index", "Home")
+    </p>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/App/Scripts.js"></script>
+}

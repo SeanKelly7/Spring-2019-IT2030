@@ -22,3 +22,44 @@ select,
 textarea {
     max-width: 280px;
 }
+
+input {
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.events
+{
+    text-align: center;
+}
+
+#searchresults {
+    text-align: left;
+}
+
+#error-message {
+    color: red;
+}
+
+#update-message {
+    color: red;
+}
+
+.register-box {
+    background-color: #eee;
+    border-radius: 4px;
+    padding: 30px 10px;
+    width: 75%;
+}
+
+#searchresults p {
+    background-color: #eee;
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 4px;
+}

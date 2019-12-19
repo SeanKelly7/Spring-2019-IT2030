@@ -1,0 +1,71 @@
+﻿@model EventApplication.Models.Order
+
+@{
+    ViewBag.Title = "Order Details";
+}
+
+<h2>Order Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Order Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecordId)
+        </dd>
+
+        <dt>
+            Number of Tickets
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+
+        <dt>
+            Date Ordered
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventSelected.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventSelected.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventSelected.Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventSelected.Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventSelected.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventSelected.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventSelected.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventSelected.EndDate)
+        </dd>
+    </dl>
+</div>
+
+@Html.ActionLink("Back to Browse", "Index", "Home")
